@@ -28,14 +28,19 @@ public class SimpleButtonTests {
         //   capabilities.setCapability("deviceName","appium_test_avd_1");
         //   capabilities.setCapability("app", appPath);
         //-------------------------------------------------------
-        // INSTEAD: when testing locally, start the server with the following command:
+        // To test locally:
+        // 1. Start the server:
         //   appium --pre-launch --platform-name Android --device-name avdName --app apkPath
-        //-------------------------------------------------------
         // For example,
         //   appium --pre-launch --platform-name Android --device-name appium_test_avd_1 --app ../apks/simpleButton-debug.apk
+        // 2. Right click the test file, and "Run"
+        //-------------------------------------------------------
+        // To package a zip file for AWS device farm:
+        // 1. Terminal
+        // 2. mvn clean package
         //-------------------------------------------------------
 
-        driver = new AndroidDriver<>(new URL("http://0.0.0.0:4723/wd/hub"), new DesiredCapabilities());
+        driver = new AndroidDriver(new URL("http://0.0.0.0:4723/wd/hub"), new DesiredCapabilities());
     }
 
     @After
