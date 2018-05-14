@@ -13,6 +13,19 @@ import java.net.URL;
 
 import static org.junit.Assert.assertEquals;
 
+//-------------------------------------------------------
+// To test locally:
+// 1. Start the server:
+//   appium --pre-launch --platform-name Android --device-name avdName --app apkPath
+// For example,
+//   appium --pre-launch --platform-name Android --device-name appium_test_avd_1 --app ../apks/simpleButton-debug.apk
+// 2. Right click the test file, and "Run"
+//-------------------------------------------------------
+// To package a zip file for AWS device farm:
+// 1. Terminal
+// 2. mvn clean package
+//-------------------------------------------------------
+
 public class SimpleButtonTests {
     public AppiumDriver<WebElement> driver;
 
@@ -27,17 +40,6 @@ public class SimpleButtonTests {
         //   capabilities.setCapability("platformVersion", "7.1.1");
         //   capabilities.setCapability("deviceName","appium_test_avd_1");
         //   capabilities.setCapability("app", appPath);
-        //-------------------------------------------------------
-        // To test locally:
-        // 1. Start the server:
-        //   appium --pre-launch --platform-name Android --device-name avdName --app apkPath
-        // For example,
-        //   appium --pre-launch --platform-name Android --device-name appium_test_avd_1 --app ../apks/simpleButton-debug.apk
-        // 2. Right click the test file, and "Run"
-        //-------------------------------------------------------
-        // To package a zip file for AWS device farm:
-        // 1. Terminal
-        // 2. mvn clean package
         //-------------------------------------------------------
 
         driver = new AndroidDriver(new URL("http://0.0.0.0:4723/wd/hub"), new DesiredCapabilities());
